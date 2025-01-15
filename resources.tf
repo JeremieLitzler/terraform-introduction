@@ -22,14 +22,14 @@ provider "azurerm" {
 
 # Define "location" variable with a default
 variable "location" {
-    type = string
-    default = "Switzerland"
+  type    = string
+  default = "Switzerland"
 }
 
 # Define "location2" variable without a default
 # So it must be set in a "env.tfvars" file
 variable "location2" {
-    type = string
+  type = string
 }
 
 # Define Resources or Data
@@ -42,10 +42,10 @@ resource "azurerm_resource_group" "example" {
 # See docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/redis_cache
 # Or code: https://github.com/hashicorp/terraform-provider-azurerm/tree/main/internal/services/redis
 resource "azurerm_redis_cache" "my_redis" {
-    capacity = 1
-    family = ""
-    resource_group_name = azurerm_resource_group.example.name # Object syntax of dependent resource
-    sku_name = ""
-    location = ""
-    name = ""
+  capacity            = 1
+  family              = ""
+  resource_group_name = azurerm_resource_group.example.name # Object syntax of dependent resource
+  sku_name            = ""
+  location            = ""
+  name                = ""
 }
